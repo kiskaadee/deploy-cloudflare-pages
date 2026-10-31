@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple testing website deployed on Cloudflare Pages">
+  <title>Cloudflare Pages Test | roadtotech.me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <span class="badge">Edge Deployment</span>
+      <h1>Testing Site for Cloudflare Pages</h1>
+      <p class="subtitle">A lightweight static site running on Cloudflare's global edge network.</p>
+    </header>
+
+    <main class="site-main">
+      <section class="card">
+        <h2>Deployment Status</h2>
+        <div class="status-grid">
+          <div class="status-item">
+            <span class="status-label">Network</span>
+            <span class="status-value status-online">Cloudflare Edge CDN</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Domain Target</span>
+            <code class="status-value" id="domain-display">*.roadtotech.me</code>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Protocol</span>
+            <span class="status-value" id="protocol-display">Detecting...</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Client Time</span>
+            <span class="status-value" id="client-time">--:--:--</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Interactive Test Widget</h2>
+        <p>Test client-side execution and latency:</p>
+        <div class="interactive-panel">
+          <div class="counter-display">
+            <span>Click Count:</span>
+            <strong id="counter-value">0</strong>
+          </div>
+          <div class="button-group">
+            <button id="btn-increment" class="btn primary">Increment</button>
+            <button id="btn-reset" class="btn secondary">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Architecture Highlights</h2>
+        <ul class="features-list">
+          <li><strong>Zero Origin Cold-Start:</strong> Static assets are cached and distributed worldwide.</li>
+          <li><strong>Automatic SSL/TLS:</strong> HTTPS certs are provisioned and renewed automatically by Cloudflare.</li>
+          <li><strong>Native Subdomain:</strong> Mapped to <code>roadtotech.me</code> via CNAME within the same Cloudflare zone.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> <a href="https://roadtotech.me" target="_blank" rel="noopener noreferrer">roadtotech.me</a> &bull; Deployed via Cloudflare Pages</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
